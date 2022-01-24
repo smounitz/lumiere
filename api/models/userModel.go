@@ -18,8 +18,8 @@ func NewUserModel(gdb *GraphDb) *UserModel {
 		graphDb: gdb}
 }
 
-// In node I will never pass by reference because I try to code
-// functionaly and passing by reference if a side efect
+// In nodejs I will never pass by reference because I try to code
+// functionally and passing by reference if a side effect
 func (u *UserModel) InsertUser(user *User) error {
 	existing, _ := u.find(user.Email)
 	if existing.Id != "" {
@@ -32,7 +32,7 @@ func (u *UserModel) InsertUser(user *User) error {
 	return nil
 }
 
-// In nodejs I usually seperate the db code to a subdirectory in models
+// In nodejs I usually separate the db code to a subdirectory called connectors
 func (u *UserModel) find(email string) (User, error) {
 	session := u.graphDb.NewReadSession()
 	defer session.Close()
@@ -66,7 +66,7 @@ func (u *UserModel) find(email string) (User, error) {
 	return result.(User), nil
 }
 
-// In nodejs I usually seperate the db code to a subdirectory in models
+// In nodejs I usually separate the db code to a subdirectory called connectors
 func (u *UserModel) save(user User) error {
 	session := u.graphDb.NewWriteSession()
 	defer session.Close()

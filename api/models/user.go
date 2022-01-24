@@ -8,7 +8,7 @@ type User struct {
 	Password  Password `json:"-"`
 }
 
-// With node I would validate with a JSON schema validator
+// With nodejs I would validate with a JSON schema validator
 func (u User) Validate() []string {
 	return nil
 }
