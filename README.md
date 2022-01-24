@@ -9,7 +9,7 @@ Lumiere uses the example movie neo4j database and adds to it:
 * (So far only the user node was added)
 
 
-Lumiere will expose a graphql endpoint (not implemented yet) to query movies and their annotations. We want to show movies relevant to the user, so querying will only be allowed for logged in users. The movies and annotations will be ordered based on the relations between the login user and other users in the database.
+Lumiere will expose a graphql endpoint (not implemented yet) to query movies and their annotations. We want to show movies relevant to the user, so querying will only be allowed for logged in users. The movies and annotations will be ordered based on the relations between the loged in user and other users in the database.
 
 Graphql is great, but for things like health checks, authentication, and social network sign in, a simple Rest endpoint is better.  So we added a few Rest endpoint. But inspired by Graphql mutations we chose to name the endpoint with verbs (register, signing, etc) and not http verb and noun.
 
